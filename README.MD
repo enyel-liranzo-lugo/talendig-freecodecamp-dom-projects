@@ -4,7 +4,7 @@ Este repositorio contiene cinco proyectos realizados con JavaScript utilizando e
 
 ### Proyectos incluidos:
 
-1. **Genreador de colores hexadecimales aleatorios**
+1. **Genreador de colores hexadecimales aleatorios (1/5)**
    - Descripción: Una aplicación que genera colores en formato hexadecimal de manera aleatoria.
    - Características destacadas: Utiliza un botón que, al presaionarlo, cambiará el color actual por otro totalmente diferente, además de mostrar el color específico en pantalla.
 
@@ -15,7 +15,3 @@ Este repositorio contiene cinco proyectos realizados con JavaScript utilizando e
 ### Agradecimientos:
 
 Gracias a FreeCodeCamp por proporcionar el tutorial y la inspiración para estos proyectos.
-
----
-
-Este README fue generado por un asistente de IA.
