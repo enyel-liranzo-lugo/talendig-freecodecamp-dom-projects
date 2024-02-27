@@ -1,4 +1,5 @@
 import { useState } from "react"
+import { RgbColorCard } from "./components/RgbColorCard"
 
 export default function App() {
 
@@ -27,23 +28,23 @@ export default function App() {
       <h1 className="text-3xl font-bold mb-5">RBG Color Slider Maker</h1>
 
       <div className="flex flex-col gap-y-5">
-        <div className="flex flex-col items-center">
-          <label className="text-2xl font-semibold" htmlFor="red">R - Red</label>
-          <input onChange={changeRedValue} type="range" name="red" id="red" min={0} max={255} step={1} />
-          <p>Value: <span>{red}</span></p>
-        </div>
+        <RgbColorCard
+          name={"R - Red"}
+          color={red}
+          changeColor={changeRedValue}
+        />
 
-        <div className="flex flex-col items-center">
-          <label className="text-2xl font-semibold" htmlFor="green">G - Green</label>
-          <input onChange={changeGreenValue} type="range" name="green" id="green" min={0} max={255} step={1} />
-          <p>Value: <span>{green}</span></p>
-        </div>
+        <RgbColorCard
+          name={"G - Green"}
+          color={green}
+          changeColor={changeGreenValue}
+        />
 
-        <div className="flex flex-col items-center">
-          <label className="text-2xl font-semibold" htmlFor="blue">B - Blue</label>
-          <input onChange={changeBlueValue} type="range" name="blue" id="blue" min={0} max={255} step={1} />
-          <p>Value: <span>{blue}</span></p>
-        </div>
+        <RgbColorCard
+          name={"B - Blue"}
+          color={blue}
+          changeColor={changeBlueValue}
+        />
       </div>
 
       <div className="mt-5">
