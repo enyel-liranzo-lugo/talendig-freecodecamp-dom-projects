@@ -10,8 +10,13 @@ Este repositorio contiene cinco proyectos realizados con JavaScript utilizando e
    - Características destacadas: Utiliza un botón que, al presaionarlo, cambiará el color actual por otro totalmente diferente, además de mostrar el color específico en pantalla.
 
 2. **Slider de Colores RGB (2/5)**
+
    - Descripción: Una aplicación que genera colores en formato RGB usando las entradas (inputs) de rango.
    - Características destacadas: Cuando se hagan cambios de rango dentro de las entradas, la aplicación escuchará por los cambios e integrará los valores obtenidos para generar el nuevo color del cuerpo del DOM.
+
+3. **Generador de Citas Aleatorias (3/5)**
+   - Descripción: Una aplicación que genera citas de manera aleatoria usando una API externa.
+   - Características destacadas: Cuando el usuario entre a la aplicación, se le aparecerá una frase diferente cada vez que entre. Además de contar con un botón para generar obtener una nueva frase.
 
 ### Contribución:
 
