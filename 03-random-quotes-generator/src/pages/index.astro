@@ -1,16 +1,11 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Principal from "../components/Principal.astro";
+import { Quote } from "../components/Quote.jsx";
 ---
 
 <Layout title="Random Quote Generator">
   <Principal>
-    <div class="flex flex-col mt-5 gap-y-5">
-      <p class="text-white italic">
-        "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iste,
-        quisquam."
-      </p>
-      <span class="text-white italic ml-auto">- Random Author</span>
-    </div>
+    <Quote client:load />
   </Principal>
 </Layout>
