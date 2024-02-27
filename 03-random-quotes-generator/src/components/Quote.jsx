@@ -2,8 +2,8 @@ import { useEffect, useState } from "react"
 
 export function Quote() {
 
-  const [quote, setQuote] = useState()
-  const [author, setAuthor] = useState()
+  const [quote, setQuote] = useState(null)
+  const [author, setAuthor] = useState(null)
 
   useEffect(() => {
     fetch("https://api.quotable.io/random")
