@@ -1,13 +1,32 @@
+import { useState } from "react"
+import { GenerateColorCard } from "./components/GenerateColorCard";
+
+const changeColor = () => {
+  let colorCharacters = "0123456789ABCDEF"
+  let initialHexColor = "#"
+
+  for (let i = 0; i < 6; i++) {
+    let aleatoryIndex = Math.floor(Math.random() * 16)
+    initialHexColor += colorCharacters[aleatoryIndex]
+  }
+
+  return initialHexColor;
+}
+
 export default function App() {
 
-  return (
-    <section className="flex flex-col text-center gap-y-5 font-semibold">
-      <h1 className="text-3xl">Random Hexadecimal Color Generator</h1>
-      <p className="text-xl">Current Color: <span className="">#ffffff</span></p>
+  const [currentColor, setCurrentColor] = useState("#ffffff")
 
-      <button className="bg-white w-fit mx-auto text-black p-2 rounded-lg border-slate-950 hover:bg-slate-700 hover:text-white transition-colors">
-        Change Color!
-      </button>
-    </section>
+  const generateHexadecimalColor = () => {
+    setCurrentColor(changeColor())
+  }
+
+  document.body.style.backgroundColor = currentColor;
+
+  return (
+    <GenerateColorCard
+      setFunction={generateHexadecimalColor}
+      currentColor={currentColor}
+    />
   )
 }
