@@ -5,8 +5,13 @@ Este repositorio contiene cinco proyectos realizados con JavaScript utilizando e
 ### Proyectos incluidos:
 
 1. **Genreador de colores hexadecimales aleatorios (1/5)**
+
    - Descripción: Una aplicación que genera colores en formato hexadecimal de manera aleatoria.
    - Características destacadas: Utiliza un botón que, al presaionarlo, cambiará el color actual por otro totalmente diferente, además de mostrar el color específico en pantalla.
+
+2. **Slider de Colores RGB (2/5)**
+   - Descripción: Una aplicación que genera colores en formato RGB usando las entradas (inputs) de rango.
+   - Características destacadas: Cuando se hagan cambios de rango dentro de las entradas, la aplicación escuchará por los cambios e integrará los valores obtenidos para generar el nuevo color del cuerpo del DOM.
 
 ### Contribución:
 
