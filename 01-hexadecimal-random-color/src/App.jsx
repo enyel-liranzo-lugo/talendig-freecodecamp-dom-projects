@@ -15,7 +15,7 @@ const changeColor = () => {
 
 export default function App() {
 
-  const [currentColor, setCurrentColor] = useState("#ffffff")
+  const [currentColor, setCurrentColor] = useState("#242424")
 
   const generateHexadecimalColor = () => {
     setCurrentColor(changeColor())
