@@ -15,8 +15,13 @@ Este repositorio contiene cinco proyectos realizados con JavaScript utilizando e
    - Características destacadas: Cuando se hagan cambios de rango dentro de las entradas, la aplicación escuchará por los cambios e integrará los valores obtenidos para generar el nuevo color del cuerpo del DOM.
 
 3. **Generador de Citas Aleatorias (3/5)**
+
    - Descripción: Una aplicación que genera citas de manera aleatoria usando una API externa.
    - Características destacadas: Cuando el usuario entre a la aplicación, se le aparecerá una frase diferente cada vez que entre. Además de contar con un botón para generar obtener una nueva frase.
+
+4. **Cronómetro (4/5)**
+   - Descripción: Una aplicación que marcará el tiempo en horas, minutos y segundos, como un cronómetro.
+   - Características destacadas: Se tendrá dos botones: Uno para pausar el cronómetro y otro para reiniciarlo en su estado inicial.
 
 ### Contribución:
 
