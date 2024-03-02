@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
-import { type TodoTitle } from './types/types'
+import { type TodoId, type TodoTitle } from './types/types'
+import { Todo } from './components/Todo'
 
 const mockTodos = [
   {
@@ -54,6 +55,11 @@ const App = (): JSX.Element => {
 
   // Delete TODO
 
+  const handleRemoveTodo = ({ id }: TodoId): void => {
+    const newTodos = todos.filter(todo => todo.id !== id)
+    setTodos(newTodos)
+  }
+
   return (
     <div>
       <h1>Todo List</h1>
@@ -76,21 +82,19 @@ const App = (): JSX.Element => {
         <div>
           <h2>My tasks</h2>
           <div>
-            {
-              todos.map(todo => {
-                return (
-                  <div key={todo.id}>
-                    <input
-                      type="checkbox"
-                      value={todo.title}
-                    />
-                    <label htmlFor={todo.id}>
-                      {todo.title}
-                    </label>
-                  </div>
-                )
-              })
-            }
+            <ul>
+              {todos.map(todo =>
+                <li key={todo.id}>
+                  <Todo
+                    id={todo.id}
+                    key={todo.id}
+                    title={todo.title}
+                    completed={todo.completed}
+                    handleRemoveTodo={handleRemoveTodo}
+                  />
+                </li>
+              )}
+            </ul>
           </div>
         </div>
       </main>
