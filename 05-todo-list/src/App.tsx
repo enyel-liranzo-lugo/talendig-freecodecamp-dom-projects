@@ -4,8 +4,6 @@ import { AddTodo } from './components/AddTodo'
 import { mockTodos } from './types/sampleconsts'
 import { Todos } from './components/Todos'
 
-const RANDOM_ID = crypto.randomUUID()
-
 const App = (): JSX.Element => {
   const [todos, setTodos] = useState(mockTodos)
   const [inputValue, setInputValue] = useState('')
@@ -14,7 +12,7 @@ const App = (): JSX.Element => {
 
   const handleAddTodo = ({ title }: TodoTitle): void => {
     const newTodo = {
-      id: RANDOM_ID,
+      id: crypto.randomUUID(),
       title,
       completed: false
     }
@@ -57,8 +55,10 @@ const App = (): JSX.Element => {
   }
 
   return (
-    <div>
-      <h1>Todo List</h1>
+    <div
+      className='bg-white p-10 text-slate-950 w-[450px] h-[400px] overflow-hidden rounded-md'
+    >
+      <h1 className='text-center text-2xl font-bold border-2 border-black rounded-lg w-fit px-2 mx-auto mb-5'>Todo List</h1>
       <main>
         <AddTodo
           setInputValue={setInputValue}

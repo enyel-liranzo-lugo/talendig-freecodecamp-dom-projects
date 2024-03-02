@@ -10,11 +10,11 @@ interface Props {
 export const Todos: React.FC<Props> = ({ todos, handleRemoveTodo, handleCompletedTodo }) => {
   return (
     <div>
-      <h2>My tasks</h2>
+      <h2 className='text-center text-md font-bold my-5'>My Tasks</h2>
       <div>
-        <ul>
+        <ul className='h-[200px] overflow-y-auto border-2 border-slate-900 p-1 rounded-md'>
           {todos.map(todo =>
-            <li key={todo.id}>
+            <li className='flex flex-col mb-2 align-middle' key={todo.id}>
               <Todo
                 id={todo.id}
                 key={todo.id}

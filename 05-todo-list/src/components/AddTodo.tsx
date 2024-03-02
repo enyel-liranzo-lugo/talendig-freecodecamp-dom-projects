@@ -8,13 +8,14 @@ interface Props {
 
 export const AddTodo: React.FC<Props> = ({ handleSubmit, inputValue, setInputValue }) => {
   return (
-    <div>
+    <div className='text-center text-white'>
       <form>
         <input
+          className='px-1.5 py-1 rounded-md text-sm'
           onKeyDown={(e) => {
             handleSubmit(e)
           }}
-          placeholder='¿Qué quieres hacer?'
+          placeholder='What do you want to do?'
           value={inputValue}
           onChange={(e) => { setInputValue(e.target.value) }}
           autoFocus
