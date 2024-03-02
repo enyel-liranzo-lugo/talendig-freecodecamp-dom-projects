@@ -31,6 +31,10 @@ Este repositorio contiene cinco proyectos realizados con JavaScript utilizando e
 
 ¡Siéntete libre de contribuir con mejoras, correcciones de errores o nuevos proyectos! Solo asegúrate de seguir las pautas de contribución especificadas en este repositorio.
 
+### Conclusiones: 
+
+Después de haber terminado estos cinco proyectos, tengo que decir que fue la experiencia más desafiante que he tenido en mi camino como programador. Realmente touve que manejarme con todo lo que tenía para poder aprender muchas cosas que me ofrece TypeScript, React y Astro. 
+
 ### Agradecimientos:
 
 Gracias a FreeCodeCamp por proporcionar el tutorial y la inspiración para estos proyectos.
