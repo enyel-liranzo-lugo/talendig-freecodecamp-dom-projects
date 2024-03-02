@@ -23,6 +23,10 @@ Este repositorio contiene cinco proyectos realizados con JavaScript utilizando e
    - Descripción: Una aplicación que marcará el tiempo en horas, minutos y segundos, como un cronómetro.
    - Características destacadas: Se tendrá dos botones: Uno para pausar el cronómetro y otro para reiniciarlo en su estado inicial.
 
+5. **Cronómetro (5/5)**
+   - Descripción: Una aplicación de tareas donde podrás crear, editar y borrar tus tareas.
+   - Características destacadas: Este será el primer proyecto personal en donde se usará TypeScript para aprender de su sintaxis, combinándolo con React para hacer una mejor experiencia de usuario. Además, se contará con varias validaciones de objetos para hacer las comprobaciones necesarias para poder manejar cada tarea que se renderice en el componente principal.
+
 ### Contribución:
 
 ¡Siéntete libre de contribuir con mejoras, correcciones de errores o nuevos proyectos! Solo asegúrate de seguir las pautas de contribución especificadas en este repositorio.
