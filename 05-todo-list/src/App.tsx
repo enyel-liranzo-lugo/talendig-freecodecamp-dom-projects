@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { type TodoId, type TodoTitle } from './types/types'
+import { type Todo as TodoType, type TodoId, type TodoTitle } from './types/types'
 import { Todo } from './components/Todo'
 
 const mockTodos = [
@@ -47,10 +47,12 @@ const App = (): JSX.Element => {
     setTodos(newTodos)
   }
 
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>): void => {
-    event.preventDefault()
-    handleAddTodo({ title: inputValue, completed: false })
-    setInputValue('')
+  const handleSubmit = (event: React.KeyboardEvent<HTMLInputElement>): void => {
+    if (event.key === 'Enter') {
+      event.preventDefault()
+      handleAddTodo({ title: inputValue, completed: false })
+      setInputValue('')
+    }
   }
 
   // Delete TODO
@@ -60,22 +62,39 @@ const App = (): JSX.Element => {
     setTodos(newTodos)
   }
 
+  // Completed TODO
+
+  const handleCompletedTodo = ({ id, completed }: Pick<TodoType, 'id' | 'completed'>): void => {
+    const newTodos = todos.map(todo => {
+      if (todo.id === id) {
+        return {
+          ...todo,
+          completed
+        }
+      }
+
+      return todo
+    })
+
+    setTodos(newTodos)
+  }
+
+  const entries = Object.entries(localStorage)
+  console.log(entries)
+
   return (
     <div>
       <h1>Todo List</h1>
       <main>
         <div>
-          <form onSubmit={handleSubmit}>
+          <form>
             <input
-              className='new-todo'
+              onKeyDown={handleSubmit}
               placeholder='¿Qué quieres hacer?'
               value={inputValue}
               onChange={(e) => { setInputValue(e.target.value) }}
               autoFocus
             />
-            <button>
-              Add Task
-            </button>
           </form>
         </div>
 
@@ -91,6 +110,7 @@ const App = (): JSX.Element => {
                     title={todo.title}
                     completed={todo.completed}
                     handleRemoveTodo={handleRemoveTodo}
+                    handleCompletedTodo={handleCompletedTodo}
                   />
                 </li>
               )}
