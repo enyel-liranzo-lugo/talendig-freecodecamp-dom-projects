@@ -1,3 +1,6 @@
+import React, { useState } from 'react'
+import { type TodoTitle } from './types/types'
+
 const mockTodos = [
   {
     id: '1',
@@ -27,23 +30,54 @@ const mockTodos = [
 ]
 
 const App = (): JSX.Element => {
+  const [todos, setTodos] = useState(mockTodos)
+  const [inputValue, setInputValue] = useState('')
+
+  // Add TODO
+
+  const handleAddTodo = ({ title }: TodoTitle): void => {
+    const newTodo = {
+      id: crypto.randomUUID(),
+      title,
+      completed: false
+    }
+
+    const newTodos = [...todos, newTodo]
+    setTodos(newTodos)
+  }
+
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>): void => {
+    event.preventDefault()
+    handleAddTodo({ title: inputValue, completed: false })
+    setInputValue('')
+  }
+
+  // Delete TODO
+
   return (
     <div>
       <h1>Todo List</h1>
       <main>
         <div>
-          <input
-            type="text"
-            placeholder="Ingresa tu tarea"
-          />
-          <button>Crear tarea</button>
+          <form onSubmit={handleSubmit}>
+            <input
+              className='new-todo'
+              placeholder='¿Qué quieres hacer?'
+              value={inputValue}
+              onChange={(e) => { setInputValue(e.target.value) }}
+              autoFocus
+            />
+            <button>
+              Add Task
+            </button>
+          </form>
         </div>
 
         <div>
           <h2>My tasks</h2>
           <div>
             {
-              mockTodos.map(todo => {
+              todos.map(todo => {
                 return (
                   <div key={todo.id}>
                     <input
