@@ -1,34 +1,10 @@
 import React, { useState } from 'react'
 import { type Todo as TodoType, type TodoId, type TodoTitle } from './types/types'
-import { Todo } from './components/Todo'
+import { AddTodo } from './components/AddTodo'
+import { mockTodos } from './types/sampleconsts'
+import { Todos } from './components/Todos'
 
-const mockTodos = [
-  {
-    id: '1',
-    title: 'Doing something',
-    completed: false
-  },
-  {
-    id: '2',
-    title: 'Learning TypeScript',
-    completed: false
-  },
-  {
-    id: '3',
-    title: 'Learning React',
-    completed: false
-  },
-  {
-    id: '4',
-    title: 'Doing some stuffs',
-    completed: false
-  },
-  {
-    id: '5',
-    title: 'Complete the Bootcamp',
-    completed: false
-  }
-]
+const RANDOM_ID = crypto.randomUUID()
 
 const App = (): JSX.Element => {
   const [todos, setTodos] = useState(mockTodos)
@@ -38,7 +14,7 @@ const App = (): JSX.Element => {
 
   const handleAddTodo = ({ title }: TodoTitle): void => {
     const newTodo = {
-      id: crypto.randomUUID(),
+      id: RANDOM_ID,
       title,
       completed: false
     }
@@ -50,7 +26,8 @@ const App = (): JSX.Element => {
   const handleSubmit = (event: React.KeyboardEvent<HTMLInputElement>): void => {
     if (event.key === 'Enter') {
       event.preventDefault()
-      handleAddTodo({ title: inputValue, completed: false })
+      const newTodo = { title: inputValue, completed: false }
+      handleAddTodo(newTodo)
       setInputValue('')
     }
   }
@@ -79,44 +56,20 @@ const App = (): JSX.Element => {
     setTodos(newTodos)
   }
 
-  const entries = Object.entries(localStorage)
-  console.log(entries)
-
   return (
     <div>
       <h1>Todo List</h1>
       <main>
-        <div>
-          <form>
-            <input
-              onKeyDown={handleSubmit}
-              placeholder='¿Qué quieres hacer?'
-              value={inputValue}
-              onChange={(e) => { setInputValue(e.target.value) }}
-              autoFocus
-            />
-          </form>
-        </div>
-
-        <div>
-          <h2>My tasks</h2>
-          <div>
-            <ul>
-              {todos.map(todo =>
-                <li key={todo.id}>
-                  <Todo
-                    id={todo.id}
-                    key={todo.id}
-                    title={todo.title}
-                    completed={todo.completed}
-                    handleRemoveTodo={handleRemoveTodo}
-                    handleCompletedTodo={handleCompletedTodo}
-                  />
-                </li>
-              )}
-            </ul>
-          </div>
-        </div>
+        <AddTodo
+          setInputValue={setInputValue}
+          inputValue={inputValue}
+          handleSubmit={handleSubmit}
+        />
+        <Todos
+          todos={todos}
+          handleCompletedTodo={handleCompletedTodo}
+          handleRemoveTodo={handleRemoveTodo}
+        />
       </main>
     </div>
   )
